@@ -17,7 +17,7 @@ def ReadFaces(frame):
             a = y
     return a
 
-def DoTheFaceThing():
+def VideoFaces():
     cap = cv2.VideoCapture(0)
     ret, frame= cap.read()
     height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
@@ -46,7 +46,7 @@ pygame.display.update()
 gameOver = False
 
 while not gameOver:
-    frame_pos, height = DoTheFaceThing()
+    frame_pos, height = VideoFaces()
     y = int(frame_pos / height * 600)
     if old_y < y:
         if old_y < y - 25:
